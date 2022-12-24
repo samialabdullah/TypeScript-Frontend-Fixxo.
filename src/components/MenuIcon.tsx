@@ -8,7 +8,6 @@ interface MenuIconType {
   hideOnMobile: boolean,
 }
 
-
 const MenuIcon: React.FC<MenuIconType> = ({link, icon, quantity, hideOnMobile}) => {
   return (
     <NavLink className={`menu-icon ${hideOnMobile ? "d-none d-md-flex" : ""}`} to={link} end>

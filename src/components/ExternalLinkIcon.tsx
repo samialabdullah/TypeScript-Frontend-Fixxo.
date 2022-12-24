@@ -1,9 +1,8 @@
 import React from 'react'
 
-
 interface ExternalLinkType {
-  link: string
   icon: string
+  link: string
 }
 
 const ExternalLinkIcon: React.FC<ExternalLinkType> = ({link, icon}) => {
