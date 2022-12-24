@@ -1,0 +1,54 @@
+.showcase{
+
+    background: rgb(230,230, 230);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
+    padding-top: 20px;
+
+    .container-fluid {
+        display: flex;
+        align-items: center;
+
+        .left-img {
+            margin-left: -20px;
+            max-width: 400px;
+        }
+        .right-img {
+            margin-right: -20px;
+            max-width: 400px;   
+        }    
+    
+        .showcase-body {
+        text-align: center;
+        }
+
+        .showcase-body h2 {
+            font-size: 65px;
+            font-weight: 800;
+        }
+
+        .showcase-body p {
+            margin-top: 50px;
+            margin-bottom: 35px;
+            font-size: 20px;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 1600px ) {
+    .showcase{
+        height: 680px;
+
+        .left-img,
+        .right-img{
+            max-width: 500px; 
+        }
+        .showcase-body {
+            margin: auto;
+            
+        }
+        
+    }
+    
+}

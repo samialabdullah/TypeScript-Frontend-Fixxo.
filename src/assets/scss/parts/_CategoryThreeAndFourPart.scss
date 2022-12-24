@@ -1,0 +1,72 @@
+.flash-Four-grid,
+.flash-Three-grid {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        
+
+        .flash-Four-box,
+        .flash-Three-box {
+            max-width: 600px;
+            max-height: 800px;
+            background-color: $color-lightgray;
+
+            .flash-title {
+                font-size: 45px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 40%;
+                color: $color-white;
+            }
+            .btn-white {
+                position: relative;
+                background-color: $color-white;
+                width: 186px;
+                height: 60px;
+                border: none;
+                margin-left: 39%;
+
+            }
+            .btn-white::before,
+            .btn-white::after {
+                position: absolute;
+                content: '';
+                width: 20px;
+                height: 20px;
+            }
+            .btn-white::before{
+                left:10px;
+                top:10px;
+                border-left:3px solid $color-dark;
+                border-top:3px solid $color-dark;
+            }
+            .btn-white::after{
+                right:10px;
+                bottom:10px;
+                border-right:3px solid $color-dark;
+                border-bottom:3px solid $color-dark;
+            }
+            .btn-white:hover {
+                background-color: $color-dark;
+                color: $color-white;
+            }
+     
+        }
+        .flash-Four-grid-boxes{
+            margin-left: 30%;
+        }
+        .flash-Three-grid-boxes{
+            margin-right: 30%;
+        }
+        
+    }
+    hr {
+        margin-left: 17%;
+        width: 1110px;
+    }
+
+}

@@ -1,0 +1,24 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+// cores
+@import "./cores/variables";
+@import "./cores/colors";
+@import "./cores/base";
+@import "./cores/buttons";
+@import "./cores/card";
+
+// parts
+@import "./parts/MainMenuPart";
+@import "./parts/ProductGridPart";
+@import "./parts/FooterPart";
+@import "./parts/BreadcrumbPart";
+@import "./parts/MapPart";
+@import "./parts/ContactFormPart";
+@import "./parts/ShowCasePart";
+@import "./parts/BannersPart";
+@import "./parts/CategoryThreeAndFourPart";
+@import "./parts/CompanyServicePart";
+@import "./parts/ShoppingCartPart";
+
+
