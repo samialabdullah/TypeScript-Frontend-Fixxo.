@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import FooterPart from '../Parts/FooterPart'
 import MainMenuPart from '../Parts/MainMenuPart'
 import ShowCasePart from '../Parts/ShowCasePart'
@@ -13,12 +13,10 @@ import CustomerDelivery from "../assets/images/delivery-truck.svg";
 import { FeaturedProductsContext, ThreeContext, FourContext } from '../contexts/ProductContexts'
 import { ProductCardType } from '../components/ProductCard'
 
-
 export interface Props{
-
   product:ProductCardType []
-
 }
+
 const HomeSight: React.FC = () => {
   document.title = 'Fixxo.'
   const products = useContext(FeaturedProductsContext)
@@ -44,5 +42,4 @@ const HomeSight: React.FC = () => {
     </>
   )
 }
-
 export default HomeSight

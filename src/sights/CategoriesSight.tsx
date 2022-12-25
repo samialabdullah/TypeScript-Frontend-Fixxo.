@@ -14,5 +14,4 @@ const CategoriesSight = () => {
     </>
   )
 }
-
 export default CategoriesSight

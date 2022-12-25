@@ -11,7 +11,6 @@ export interface Product{
 
 }
 
-
 // skapa product
 export interface ProductRequest {
 

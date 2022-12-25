@@ -1,17 +1,12 @@
-import React from 'react'
 import ProductCard, { ProductCardType } from '../components/ProductCard'
-import { ProductProduct } from '../models/ProductModels'
+
 
 export interface Props{
-
   product:ProductCardType []
-
 }
-
 
 const CategoryThreePart : React.FC <Props>= ({product = []}) => {
   return (
-
     <section className="flash-Three-grid">
       <div className="container">
             <div className='flash-Three-box'>
@@ -27,5 +22,4 @@ const CategoryThreePart : React.FC <Props>= ({product = []}) => {
     </section>
   )
 }
-
 export default CategoryThreePart

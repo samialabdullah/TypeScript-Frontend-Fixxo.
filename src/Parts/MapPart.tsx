@@ -12,5 +12,4 @@ const MapPart: React.FC = () => {
          </iframe>
   )
 }
-
 export default MapPart

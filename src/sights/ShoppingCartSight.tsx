@@ -12,5 +12,4 @@ const ShoppingCartSight = () => {
     </>
   )
 }
-
 export default ShoppingCartSight

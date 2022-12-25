@@ -16,19 +16,12 @@ import { ProductContext, FeaturedProductsContext, ThreeContext, FourContext } fr
 import ProductsContextProvider from './contexts/ProductsContextProvider';
 import { ProductCardType } from './components/ProductCard';
 
-
 export interface ProductContextType {
-
   products:ProductCardType[]
-
   featured:ProductCardType[]
-
   topProducts:ProductCardType[]
-
   leftProducts:ProductCardType[]
-
 }
-
 
 function App() {
   
@@ -42,89 +35,64 @@ function App() {
       const result = await fetch('http://localhost:5000/api/products')
       setProducts(await result.json())
     }
-
-  fetchAllData()
+    fetchAllData()
  
-  const fetchFeaturedData = async (amount: number = 0) => {
+    const fetchFeaturedData = async (amount: number = 0) => {
+      let url = 'http://localhost:5000/api/products/featured'
+      if (amount !== 0)
+      url += `/take=${amount}`
+      const result = await fetch(url)
+      setFeatured(await result.json())
+    }
+    fetchFeaturedData()
 
-    let url = 'http://localhost:5000/api/products/featured'
+    const fetchTopProductsData = async (amount: number = 0) => {
+      let url = 'http://localhost:5000/api/products/topProducts'
+      if (amount !== 0)
+      url += `/take=${amount}`
+      const result = await fetch(url)
+      setTopProducts(await result.json())
+    }
+    fetchTopProductsData()
 
-    if (amount !== 0)
-
-    url += `/take=${amount}`
-
-    const result = await fetch(url)
-
-    setFeatured(await result.json())
-
-  }
-
-  fetchFeaturedData()
-
-
-  const fetchTopProductsData = async (amount: number = 0) => {
-
-    let url = 'http://localhost:5000/api/products/topProducts'
-
-    if (amount !== 0)
-
-    url += `/take=${amount}`
-
-    const result = await fetch(url)
-
-    setTopProducts(await result.json())
-
-  }
-
-  fetchTopProductsData()
-
-
-  const fetchLeftProductsData = async (amount: number = 0) => {
-
-    let url = 'http://localhost:5000/api/products/leftProducts'
-
-    if (amount !== 0)
-
-    url += `/take=${amount}`
-
-    const result = await fetch(url)
-
-    setLeftProducts(await result.json())
-
-  }
-
-  fetchLeftProductsData()
+    const fetchLeftProductsData = async (amount: number = 0) => {
+      let url = 'http://localhost:5000/api/products/leftProducts'
+      if (amount !== 0)
+      url += `/take=${amount}`
+      const result = await fetch(url)
+      setLeftProducts(await result.json())
+    }
+    fetchLeftProductsData()
 
 }, [])  
 
   return (
     <BrowserRouter>
-    <ShoppingCartProvider>
-    <ProductsContextProvider>
-      <ProductContext.Provider value={products}>
-      <FeaturedProductsContext.Provider value={featured}>
-      <ThreeContext.Provider value={topProducts}>
-      <FourContext.Provider value={leftProducts}>
-        <Routes>
-          <Route path="/" element={<HomeSight />} />
-          <Route path="/categories" element={<CategoriesSight />} />
-          <Route path="/products" element={<ProductsSight />} />
-          <Route path="/products/:name" element={<ProductDetailsSight />} />
-          <Route path="/contacts" element={<ContactsSight />} />
-          <Route path="/search" element={<SearchSight />} />
-          <Route path="/compare" element={<CompareSight />} />
-          <Route path="/wishlist" element={<WishListSight />} />
-          <Route path="/shoppingcart" element={<ShoppingCartSight />} />
-          <Route path="*" element={<NotFoundSight />} />
-        </Routes>
-      </FourContext.Provider>
-      </ThreeContext.Provider>
-      </FeaturedProductsContext.Provider>
-      </ProductContext.Provider>
-      </ProductsContextProvider>
-      </ShoppingCartProvider>
+      <ShoppingCartProvider>
+        <ProductsContextProvider>
+            <ProductContext.Provider value={products}>
+              <FeaturedProductsContext.Provider value={featured}>
+                <ThreeContext.Provider value={topProducts}>
+                  <FourContext.Provider value={leftProducts}>
+                    <Routes>
+                      <Route path="/" element={<HomeSight />} />
+                      <Route path="/categories" element={<CategoriesSight />} />
+                      <Route path="/products" element={<ProductsSight />} />
+                      <Route path="/products/:name" element={<ProductDetailsSight />} />
+                      <Route path="/contacts" element={<ContactsSight />} />
+                      <Route path="/search" element={<SearchSight />} />
+                      <Route path="/compare" element={<CompareSight />} />
+                      <Route path="/wishlist" element={<WishListSight />} />
+                      <Route path="/shoppingcart" element={<ShoppingCartSight />} />
+                      <Route path="*" element={<NotFoundSight />} />
+                    </Routes>
+                  </FourContext.Provider>
+                </ThreeContext.Provider>
+              </FeaturedProductsContext.Provider>
+            </ProductContext.Provider>
+          </ProductsContextProvider>
+        </ShoppingCartProvider>
     </BrowserRouter>
   )
 }
-
 export default App;

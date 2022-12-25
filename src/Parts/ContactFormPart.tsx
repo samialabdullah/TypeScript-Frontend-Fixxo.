@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import AlertNotification from '../components/AlertNotification'
 import { validateEmail, validateText } from '../utilities/validation'
-// import { submitData, validate } from '../assets/scripts/submit_and_validation'
 
 interface FormDataType {
   name: string
   email: string
   comments: string
-
 }
 
 const ContactFormPart: React.FC = () => {
@@ -15,24 +13,17 @@ const ContactFormPart: React.FC = () => {
   document.title = `${currentPage} || Fixxo` 
 
   const DEFAULT_VALUES: FormDataType = {name: '', email: '', comments: ''}
-  
-
   const [formData, setformData] = useState<FormDataType>(DEFAULT_VALUES)
   const [errors, setErrors] = useState<FormDataType>(DEFAULT_VALUES)
-
   const [submitted, setSubmitted] = useState<boolean>(false)
   const [failedSubmit, setFailedSubmit] = useState<boolean>(false)
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {id, value} = e.target
     setformData({...formData, [id]: value})
-
     if (id === 'name')
       setErrors({...errors, [id]: validateText(id, value)})
-
     if (id === 'email')
       setErrors({...errors, [id]: validateEmail(id, value)})
-
   }
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const {id, value} = e.target
@@ -40,18 +31,15 @@ const ContactFormPart: React.FC = () => {
 
         if (id === 'comments')
           setErrors({...errors, [id]: validateText(id, value, 3)})
-    
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-
     e.preventDefault()
     setSubmitted(false)
     setFailedSubmit(false)
 
     if (formData.name !== '' && formData.email !== '' && formData.comments !== '')
       if (errors.name === '' && errors.email === '' && errors.comments === '') { 
-        
         const res = await fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
           method: 'post',
           headers: {
@@ -71,10 +59,6 @@ const ContactFormPart: React.FC = () => {
       }
     }
 
-
-
-
-
   return (
     <section className="contact-form mt-5">
       <div className="container">
@@ -82,7 +66,6 @@ const ContactFormPart: React.FC = () => {
         { submitted ? (<AlertNotification alertType="success" title="Thank you for your comments!" text="We will contact you as soon as possible." />) : (<></>) }
         { failedSubmit ? (<AlertNotification alertType="danger" title="Something went wrong!" text="We couldn't submit your comments right now." />) : (<></>) }
 
-        
         <h2>Come in Contact with Us</h2>
         <form onSubmit={handleSubmit} noValidate>
           <div>
@@ -107,5 +90,4 @@ const ContactFormPart: React.FC = () => {
     </section>
   )
 }
-
 export default ContactFormPart

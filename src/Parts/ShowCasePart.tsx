@@ -1,11 +1,10 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import RightImage from '../assets/images/showcase-img-2.png'
 import LeftImage from '../assets/images/showcase-img-1.png'
 
 const ShowCasePart: React.FC = () => {
   return (
-    
+
     <section className="showcase">
       <div className="container-fluid">
         <img className="left-img" src={LeftImage} alt="showcaseimg"/>
@@ -21,14 +20,6 @@ const ShowCasePart: React.FC = () => {
         <img className="right-img" src={RightImage} alt="showcaseimg"/>
       </div>
     </section>
-
-    
-
-
-
-
-
   )
 }
-
 export default ShowCasePart

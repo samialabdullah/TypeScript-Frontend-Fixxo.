@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ExternalLinkIcon from '../components/ExternalLinkIcon'
 
 const FooterPart = () => {

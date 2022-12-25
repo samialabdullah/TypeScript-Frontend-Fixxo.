@@ -19,5 +19,4 @@ const BreadcrumbPart: React.FC<BreadcrumbType> = ({currentPage}) => {
     </section>
   )
 }
-
 export default BreadcrumbPart

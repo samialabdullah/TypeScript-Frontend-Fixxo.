@@ -1,15 +1,9 @@
-import React from 'react'
-import { Interface } from 'readline'
 import ProductCard, { ProductCardType } from '../components/ProductCard'
-import { ProductProduct } from '../models/ProductModels'
-
-
 
 interface ProductGridPartType {
   product: ProductCardType []
   title: string
 }
-
 
 const ProductGridPart: React.FC<ProductGridPartType> = ({title, product = []}) => {
 
@@ -26,5 +20,4 @@ const ProductGridPart: React.FC<ProductGridPartType> = ({title, product = []}) =
     </section>
   )
 }
-
 export default ProductGridPart
