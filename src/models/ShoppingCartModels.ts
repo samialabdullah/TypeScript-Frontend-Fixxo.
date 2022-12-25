@@ -1,6 +1,6 @@
 import { ProductProduct } from "./ProductModels"
 
-export interface CartItem {
+export interface CartProduct {
     articleNumber: string
     product: ProductProduct
     quantity: number
