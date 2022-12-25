@@ -157,7 +157,7 @@ function App() {
   //   }
   //   fetchLeftProductsData()
 
-  // }, [setProducts, setFeatured, setTopProducts, setLeftProducts])  
+  // }, [setProducts, setFeatured, setTopProducts,
 
 
 
