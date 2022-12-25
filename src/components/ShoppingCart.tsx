@@ -1,11 +1,11 @@
 
 import {ShoppingCartContextModel, useShoppingCart} from '../contexts/ShoppingCartContext'
-import ShoppingCartItem, { product } from './ShoppingCartproduct'
+import ShoppingCartproduct, { product } from './ShoppingCartproduct'
 
 
 const ShoppingCart = () => {
 
-    const {cartItems} = useShoppingCart() as ShoppingCartContextModel
+    const {cartproducts} = useShoppingCart() as ShoppingCartContextModel
 
   return (
 
@@ -21,7 +21,7 @@ const ShoppingCart = () => {
 
         <div className="offcanvas-body">
           {
-            cartItems.map((product: product) => (<ShoppingCartItem key={product.articleNumber} product={product}/> ))
+            cartproducts.map((product: product) => (<ShoppingCartproduct key={product.articleNumber} product={product}/> ))
             
           }
 

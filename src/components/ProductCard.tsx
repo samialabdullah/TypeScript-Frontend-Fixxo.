@@ -23,7 +23,7 @@ export interface ProductCardType {
 
 const ProductCard: React.FC <{product: ProductCardType}> = ({product}) => {
 
-    const {incrementQuantity} = useShoppingCart()as ShoppingCartContextModel
+    const {increment} = useShoppingCart()as ShoppingCartContextModel
 
  
     return (
@@ -42,7 +42,7 @@ const ProductCard: React.FC <{product: ProductCardType}> = ({product}) => {
 
                     <button className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
 
-                    <button onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
+                    <button onClick={() => increment({articleNumber: product.articleNumber, product: product})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
 
                 </div>
 

@@ -13,26 +13,26 @@ export interface product {
     rating: number
 }
 const ShoppingCartproduct: React.FC <{product: product}> = ({product}) => {
-    const {incrementQuantity, decrementQuantity, removeItem} = useShoppingCart()as ShoppingCartContextModel
+    const {increment, decrement, removeproduct} = useShoppingCart()as ShoppingCartContextModel
 
     return (
-        <div className='shoppingcart-item'>
-            <div className='item-image'>
+        <div className='shoppingcart-product'>
+            <div className='product-image'>
                 <img src={product.product.imageName} alt = {product.product.name}/>
             </div>
-             <div className='item-info'>
-                <div className='item-info-name'>{product.product.name}</div>
-                    <div className='item-info-quantity'>
-                        <div className='item-info-quantity-box'>
-                            <button className='box-button-left' onClick={() => incrementQuantity(product)}>+</button>
+             <div className='product-info'>
+                <div className='product-info-name'>{product.product.name}</div>
+                    <div className='product-info-quantity'>
+                        <div className='product-info-quantity-box'>
+                            <button className='box-button-left' onClick={() => increment(product)}>+</button>
                               <span>{product.quantity}</span>
-                            <button className='box-button-right' onClick={() => decrementQuantity(product)}>-</button>
+                            <button className='box-button-right' onClick={() => decrement(product)}>-</button>
                         </div>
                     </div>
             </div>
-            <div className='item-price'>
+            <div className='product-price'>
                 <div> {currencyFormater(product.product.price * product.quantity)} </div>
-                <button onClick={() => removeItem(product.articleNumber)} ><i className="fa-solid fa-trash"></i></button>
+                <button onClick={() => removeproduct(product.articleNumber)} ><i className="fa-solid fa-trash"></i></button>
             </div>
         </div>
     )

@@ -55,7 +55,7 @@ const MainMenuPart: React.FC = () => {
 
   const [showMenu, setShowMenu] = useState(false)      
 
-  const {cartQuantity} = useShoppingCart ()as ShoppingCartContextModel
+  const {totalQuantity} = useShoppingCart ()as ShoppingCartContextModel
 
    
 
@@ -99,13 +99,10 @@ const MainMenuPart: React.FC = () => {
 
             <button className="menu-icons" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
 
-            <MenuIcon quantity={cartQuantity} icon="fa-regular fa-bag-shopping" link={''} hideOnMobile={false} />
+              <MenuIcon quantity={totalQuantity} icon="fa-regular fa-bag-shopping" link={''} hideOnMobile={false}  />
 
             </button>
 
-
-
-           
 
             <button onClick={toggleMenu} className="d-xl-none menu-icon btn-menu-icon"><i className="fa-regular fa-bars"></i></button>
 
