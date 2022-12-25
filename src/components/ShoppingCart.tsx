@@ -2,7 +2,6 @@
 import {ShoppingCartContextModel, useShoppingCart} from '../contexts/ShoppingCartContext'
 import ShoppingCartproduct, { product } from './ShoppingCartproduct'
 
-
 const ShoppingCart = () => {
 
     const {cartproducts} = useShoppingCart() as ShoppingCartContextModel
